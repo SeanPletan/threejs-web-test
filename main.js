@@ -94,7 +94,6 @@ function main() {
 		sceneInfo.scene.add( mesh );
 		sceneInfo.mesh = mesh;
 		return sceneInfo;
-
 	}
 
 	function setupScene2() {
