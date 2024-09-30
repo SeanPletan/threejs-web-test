@@ -111,11 +111,24 @@ function main() {
 		sceneInfo.scene.add( mesh );
 		sceneInfo.mesh = mesh;
 		return sceneInfo;
+		
 
+	}
+
+	function setupScene3() {
+		const sceneInfo = makeScene(document.querySelector('#skull'));
+		const geometry = new THREE.BoxGeometry( .8,.8, .8 );
+		const material = new THREE.MeshPhongMaterial( { color: 'yellow' } );
+		const mesh = new THREE.Mesh( geometry, material );
+		sceneInfo.scene.add( mesh );
+		sceneInfo.mesh = mesh;
+
+		return sceneInfo;
 	}
 
 	const sceneInfo1 = setupScene1();
 	const sceneInfo2 = setupScene2();
+	const sceneInfo3 = setupScene3();
 
 	function resizeRendererToDisplaySize( renderer ) {
 
@@ -178,9 +191,12 @@ function main() {
         sceneInfo1.mesh.rotation.x = time;
 		sceneInfo2.mesh.rotation.y = time;
         sceneInfo2.mesh.rotation.x = time;
+		sceneInfo3.mesh.rotation.y = time;
+        sceneInfo3.mesh.rotation.x = time;
 
 		renderSceneInfo( sceneInfo1 );
 		renderSceneInfo( sceneInfo2 );
+		renderSceneInfo( sceneInfo3 );
 
 		requestAnimationFrame( render );
 
