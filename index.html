@@ -1,48 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Webpage</title>
-    <style>
-        body {
-            margin: 0;
-            height: 200vh; /* To demonstrate scrolling */
-        }
-
-        .fixed-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, red, blue);
-            z-index: -1; /* Make sure it's behind the other content */
-        }
-
-        .inner-div {
-            position: relative;
-            margin: 50px; /* Add some margin */
-            padding: 20px;
-            background-color: black;
-            color: white;
-        }
-
-        .third-div {
-            margin: 20px;
-            padding: 20px;
-            background-color: grey;
-            color: black;
-        }
-    </style>
+    <title>Example Webpage - Three.js</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="module" src="/main.js"></script>
 </head>
+
 <body>
     <div class="fixed-background"></div>
-    <div class="inner-div">
-        This is the inner div with a black background.
+    <canvas id="c"></canvas>
+    <div class="first-div">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, vitae semper sem suscipit id. Donec
+        lacinia congue felis in faucibus. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac
+        turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in,
+        nibh. Quisque volutpat augue id, faucibus.Sed quis turpis quis libero egestas fermentum. Quisque condimentum
+        metus at felis vulputate, et posuere nisi interdum. Phasellus non magna sit amet purus condimentum condimentum a
+        nec leo. Sed eget suscipit orci. Aenean ut lacinia dui. Vestibulum ante ipsum primis in faucibus orci luctus et
+        ultrices posuere cubilia curae; Suspendisse potenti.
+
+        </br></br>Aliquam erat volutpat. Morbi tincidunt, nisi vitae egestas vestibulum, odio nisi scelerisque justo, et
+        vestibulum sapien ligula et sem. Praesent nec magna nec ligula tempor dictum. Aenean feugiat, elit vel suscipit
+        convallis, purus justo scelerisque nisi, ut egestas metus arcu eu nisi. In sollicitudin, eros et suscipit
+        sagittis, turpis neque varius libero, non aliquam nisi nulla vel ligula. Nulla convallis felis non orci
+        vehicula, nec congue lorem varius.Fusce tincidunt scelerisque massa, eu tincidunt libero feugiat ut. Sed
+        tristique, ligula id dignissim
+        sollicitudin, augue nisl malesuada eros, ut tristique libero justo at urna. Vivamus tincidunt dui a nisl varius,
+        nec ornare ligula fermentum. Aenean vel lorem magna. Sed vitae sem nec arcu tristique pharetra. Sed vel felis
+        velit. Proin suscipit tincidunt lacus a tincidunt.
     </div>
+    <span id="box" class="diagram first"></span>
+    <div class="buffer"></div>
     <div class="third-div">
-        This is the third div with a grey background.
+        <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In convallis
+            semper felis, in facilisis lacus. Proin fermentum nunc magna, at commodo lectus tincidunt at. Morbi ut felis
+            vitae justo ultricies consectetur. Donec eget libero vitae turpis dictum pellentesque. Aliquam erat
+            volutpat.
+            Phasellus ac nisl ac nulla posuere interdum non id sapien.
+
+            </br></br>Ut non varius elit. Ut congue semper arcu. Curabitur vitae vestibulum leo. Duis accumsan, lacus et
+            posuere convallis, neque justo vestibulum arcu, eu gravida lorem metus sit amet mi. Aenean feugiat leo ut
+            sem
+            posuere, vitae ultricies nisl dignissim. Vivamus luctus fermentum eros vel luctus. Nulla facilisi. Nam
+            facilisis, lorem a egestas hendrerit, ligula arcu dignissim felis, et condimentum nulla turpis sed erat.
+
+            </br></br>Vestibulum sodales lectus at arcu pellentesque dignissim. Vestibulum ante ipsum primis in faucibus
+            orci luctus et ultrices posuere cubilia curae; Aenean lacinia elit vitae magna gravida, sed venenatis orci
+            fermentum. Integer cursus consequat neque vel vulputate. Nullam luctus dui in mauris tincidunt ultricies.
+            Nulla
+            at elit vel libero tincidunt ultrices. Vivamus nec sem at lorem hendrerit tincidunt.Nulla ac vestibulum
+            odio, id sagittis erat. Donec volutpat augue ut neque dictum, sed sollicitudin dictum.</p>
+            <div id="pyramid" class="diagram second"></div>
     </div>
+    <script src="script.js"></script>
+
 </body>
+
 </html>
