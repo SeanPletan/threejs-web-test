@@ -114,14 +114,39 @@ function main() {
 		
 
 	}
+	function render() {
+
+		renderer.render( scene, camera );
+	
+	}
 
 	function setupScene3() {
-		const sceneInfo = makeScene(document.querySelector('#skull'));
-		const geometry = new THREE.BoxGeometry( .8,.8, .8 );
-		const material = new THREE.MeshPhongMaterial( { color: 'yellow' } );
-		const mesh = new THREE.Mesh( geometry, material );
-		sceneInfo.scene.add( mesh );
-		sceneInfo.mesh = mesh;
+		const sceneInfo = makeScene( document.querySelector( '#skull' ) );
+
+		new RGBELoader()
+		.load( '/env_map.hdr', function ( texture ) {
+
+			texture.mapping = THREE.EquirectangularReflectionMapping;
+
+			sceneInfo.background = texture;
+			sceneInfo.environment = texture;
+			render();
+
+			// model
+			const loader = new GLTFLoader();
+			loader.load('skull_fin.glb', async function ( gltf ) {
+
+				const model = gltf.sceneInfo;
+
+				// wait until the model can be added to the scene without blocking due to shader compilation
+
+				await renderer.compileAsync( model, camera, scene );
+				model.rotation.y = 3.14;
+
+				sceneInfo.add( model );
+				render();
+			} );
+		} );
 
 		return sceneInfo;
 	}
